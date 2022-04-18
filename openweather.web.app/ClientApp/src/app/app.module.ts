@@ -16,6 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { CartComponent } from './cart/cart.component';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { ProductListComponent } from './product-list/product-list.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductAlertsComponent,
+    TopBarComponent,
+    CartComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,7 +45,9 @@ import { ProductListComponent } from './product-list/product-list.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
+      { path: 'cart', component: CartComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'shipping', component: ShippingComponent },
     ]),
     BrowserAnimationsModule
   ],

@@ -20,6 +20,9 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductAlertsComponent,
     TopBarComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    ProductDetailsComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,6 +51,7 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'shipping', component: ShippingComponent },
     ]),

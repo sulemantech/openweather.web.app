@@ -12,7 +12,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
   getWeather() {
-    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=Nairobi&APPID=01a90c1d37c8301ec35d5323cf43c5e3')
+    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=Nairobi&APPID=API_KEY')
       .pipe(map(data => { })).subscribe(result => {
       console.log(result);
     });

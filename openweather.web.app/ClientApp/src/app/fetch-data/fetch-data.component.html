@@ -1,6 +1,6 @@
 <h1 id="tableLabel">Weather forecast</h1>
 
-<mat-form-field>
+<!--<mat-form-field>
    <mat-label>
       Place
    </mat-label>
@@ -10,7 +10,24 @@
       {{item}}
     </mat-option>
   </mat-autocomplete>
-</mat-form-field>
+</mat-form-field>-->
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Google AutoComplete Demo</h1>
+    </div>
+  </div>
+  <form class="form-horizontal" #SearchPlacesForm="ngForm">
+    <div class="form-group">
+      <label class="control-label col-sm-6" for="txtSearchPlaces">search places:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="txtSearchPlaces" name="txtSearchPlaces" #txtSearchPlaces="ngModel"
+               [(ngModel)]="shippingAddress" placeholder="Enter places">
+      </div>
+    </div>
+  </form>
+</div>
+
 <p>This component demonstrates fetching data from the server.</p>
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>

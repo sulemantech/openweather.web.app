@@ -12,7 +12,7 @@ declare const google;
 
 @Component({
   selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  templateUrl: './fetch-data.component.html',
 })
 export class FetchDataComponent implements OnInit {
 

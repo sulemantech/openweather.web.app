@@ -22,6 +22,11 @@ import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { WeatherComponent } from './weather/weather.component';
+
+import { MatIconModule } from '@angular/material/icon'
+import { MatCardModule } from '@angular/material/card';
+
 
 
 @NgModule({
@@ -37,7 +42,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     CartComponent,
     ShippingComponent,
     ProductDetailsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -55,7 +61,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'shipping', component: ShippingComponent },
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

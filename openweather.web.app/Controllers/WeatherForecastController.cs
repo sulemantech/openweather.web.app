@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using openweather.web.app.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace openweather.web.app.Controllers
@@ -23,17 +26,21 @@ namespace openweather.web.app.Controllers
             _logger = logger;
         }
 
+
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<string> Get(string city)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            
+            //Assign API KEY which received from OPENWEATHERMAP.ORG  
+            string appId = "01a90c1d37c8301ec35d5323cf43c5e3";
+
+            //API path with CITY parameter and other parameters.  
+            string url = string.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&units=metric&cnt=1&APPID={1}", city, appId);
+
+            using (WebClient client = new WebClient())
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return await client.DownloadStringTaskAsync(url);
+            }
         }
     }
 }

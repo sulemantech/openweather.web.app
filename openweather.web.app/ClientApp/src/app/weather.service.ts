@@ -14,7 +14,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
   getWeatherO() {
-    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=Nairobi&APPID=API_KEY')
+    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=Islamabad&APPID=API_KEY')
       .pipe(map(data => { })).subscribe(result => {
       console.log(result);
     });
@@ -24,7 +24,7 @@ export class WeatherService {
       .set('units', 'metric')
       .set('q', city)
       .set('appId', environment.apiKey);
-    console.log(environment.apiUrl + 'weather' + environment.apiKey)
+    //console.log(environment.apiUrl + 'weather' + environment.apiKey)
     return this.http.get<Weather>(environment.apiUrl + 'weather', { params: options });
   }
   private handleError(error: Response | any) {
